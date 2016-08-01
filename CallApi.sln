@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallApi", "CallApi\CallApi.csproj", "{F7921D97-88F4-4015-AFA8-17D83CDB3DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZingChart", "CallApi22\ZingChart.csproj", "{37B3FA18-8584-423D-9A27-16C8F8446CB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7921D97-88F4-4015-AFA8-17D83CDB3DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7921D97-88F4-4015-AFA8-17D83CDB3DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7921D97-88F4-4015-AFA8-17D83CDB3DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7921D97-88F4-4015-AFA8-17D83CDB3DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B3FA18-8584-423D-9A27-16C8F8446CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B3FA18-8584-423D-9A27-16C8F8446CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B3FA18-8584-423D-9A27-16C8F8446CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B3FA18-8584-423D-9A27-16C8F8446CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

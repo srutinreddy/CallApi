@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <title>DragAndDrop</title>
+
+    <style>
+        .list {
+            list-style: none outside none;
+            margin: 10px 0 30px;
+        }
+
+        .item {
+            display: inline-block;
+            width: 30%;
+            height: 200px;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border: 2px solid #444;
+            border-radius: 5px;
+            background-color: yellow;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .myHandle {
+            display: block;
+            height: 20px;
+            width: 20px;
+            vertical-align: top;
+            background-color: transparent;
+            cursor: move;
+            
+        }
+
+        .image {
+            height: 150px;
+            width: 150px;
+        }
+
+        .lineimage {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+    <script src="https://rawgithub.com/angular-ui/ui-sortable/master/src/sortable.js"></script>
+    <script src="scripts/DragandDrop.js"></script>
+</head>
+<body>
+    <div ng-app="sortableApp" ng-controller="sortableController" class="container">
+        <center> <h2>Move the Images</h2></center>
+
+        <div>
+            <ul ui-sortable="sortableOptions" ng-model="list" class="list">
+                <li ng-repeat="item in list" class="item">
+                    <div class="myHandle">☰</div>
+                    <div> {{item.text}}</div>
+                    <img class="image" ng-src='{{item.value}}' />
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</body>
+</html>

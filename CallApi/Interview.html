@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    
+   length: <input type="text" id="height" />
+   width <input type="text" id="width" />
+    <input type="button" value="click" onclick="draw()" />
+    <p id="test"></p><p id="test1"></p>
+    
+        <svg height="500" width="500" id="svg">
+            <line id="top" x1="0" y1="0" x2="0" y2="0" />
+            <line id="right" x1="0" y1="0" x2="0" y2="0" />
+            <line id="bottom" x1="0" y1="0" x2="0" y2="0" />
+            <line id="left" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+   
+
+
+    <script>
+        var a = document.getElementById("top");
+        var b = document.getElementById("right");
+        var c = document.getElementById("bottom");
+        var d = document.getElementById("left");
+        
+        function draw() {
+            
+            var height = document.getElementById("height").value;
+            var width = document.getElementById("width").value;
+            //document.getElementById("test").innerHTML = height;
+            //document.getElementById("test1").innerHTML = width;
+            //width=height;
+            //console.log((width == null) ? false : true);
+            setTimeout(function () {
+                a.setAttribute("style", "stroke: black;stroke-width:7");
+                a.setAttribute("x1", 0);
+                a.setAttribute("y1", 0);
+                a.setAttribute("x2", height);
+                a.setAttribute("y2", 0);
+            }, 1000);
+            setTimeout(function () {
+
+                b.setAttribute("style", "stroke: black;stroke-width:7");
+                b.setAttribute("x1", height);
+                b.setAttribute("y1", 0);
+                b.setAttribute("x2", height);
+                b.setAttribute("y2", width);
+            }, 2000);
+            setTimeout(function () {
+               
+                c.setAttribute("style", "stroke: black;stroke-width:7");
+                c.setAttribute("x1", height);
+                c.setAttribute("y1", width);
+                c.setAttribute("x2", 0);
+                c.setAttribute("y2", width);
+            }, 3000);
+            setTimeout(function () {
+               
+                d.setAttribute("style", "stroke: black;stroke-width:7");
+                d.setAttribute("x1", 0);
+                d.setAttribute("y1", width);
+                d.setAttribute("x2", 0);
+                d.setAttribute("y2", 0);
+            }, 4000);
+        }
+
+    </script>
+
+</body>
+</html>

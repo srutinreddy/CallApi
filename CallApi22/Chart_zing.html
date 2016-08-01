@@ -1,0 +1,46 @@
+﻿
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="ZingChart/zingchart.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="Chart_zing.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: separate;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+            <table ng-app="app" ng-controller="controller1">
+                <th> total count= {{myData.length}}</th>
+                <td class="Open">Open: {{(myData | filter: {DemandStatus: 'Open'}).length}}</td>
+                <td class="Identified">Identified: {{(myData | filter: {DemandStatus: 'Identified'}).length}}</td>
+                <td class="Hold">Hold: {{(myData | filter: {DemandStatus: 'Hold'}).length}}</td>
+                <td class="NeedClarity">
+                    Need Clarity:{{myData.length-
+                    (myData | filter: {DemandStatus: 'Open'}).length-
+                    (myData | filter: {DemandStatus: 'Identified'}).length-
+                    (myData | filter: {DemandStatus: 'Hold'}).length
+                    }}
+                </td>                      
+            </table>
+    <p>Click here to get graph</p>
+            <!--<table>
+                <tr ng-repeat="data in myData |orderBy : 'DemandStatus'"  >
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{data.DemandStatus}}</td>
+                    <td>{{data.AccountManager}}</td>                    
+                    <td>{{data.CurrentEntryPositionsCount}}</td> 
+                    
+                </tr>
+            </table>-->
+        
+    <div id='chartDiv'></div>
+    
+</body>
+</html>

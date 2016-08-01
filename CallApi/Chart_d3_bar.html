@@ -1,0 +1,55 @@
+﻿<style>
+    .chart rect {
+        fill: green;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        font-size: 12px;
+    }
+
+    table, th, td {
+        border: 1px solid;
+        border-collapse: separate;
+        padding: 5px;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Graph</title>
+    <meta charset="utf-8" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+</head>
+<body>
+    
+    <table ng-app="app" ng-controller="controller1">
+        <th> total count= {{myData.length}}</th>
+        <td class="Open">Open: {{(myData | filter: {DemandStatus: 'Open'}).length}}</td>
+        <td class="Identified">Identified: {{(myData | filter: {DemandStatus: 'Identified'}).length}}</td>
+        <td class="Hold">Hold: {{(myData | filter: {DemandStatus: 'Hold'}).length}}</td>
+        <td class="NeedClarity">
+            Need Clarity:{{
+myData.length-
+                    (myData | filter: {DemandStatus: 'Open'}).length-
+                    (myData | filter: {DemandStatus: 'Identified'}).length-
+                    (myData | filter: {DemandStatus: 'Hold'}).length
+            }}
+        </td>
+    </table>
+    <a href="Index.html">HOME</a>
+    <div class="chart-container">
+        <svg class="chart">
+        </svg>
+    </div>
+    <script src="scripts/Chart_d3_bar.js"></script>
+</body>
+</html>

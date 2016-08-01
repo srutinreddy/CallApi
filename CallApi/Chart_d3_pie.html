@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Testing Pie Chart</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/d3/d3.min.js"></script>
+    <script src="scripts/d3/d3.legend.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        .legend rect {
+            fill: white;
+            opacity: 0.4;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="Index.html">HOME</a>
+    <table ng-app="app" ng-controller="controller1">
+        <th> total count= {{myData.length}}</th>
+        <td class="Open">Open: {{(myData | filter: {DemandStatus: 'Open'}).length}}</td>
+        <td class="Identified">Identified: {{(myData | filter: {DemandStatus: 'Identified'}).length}}</td>
+        <td class="Hold">Hold: {{(myData | filter: {DemandStatus: 'Hold'}).length}}</td>
+        <td class="NeedClarity">
+            Need Clarity:{{
+myData.length-
+                    (myData | filter: {DemandStatus: 'Open'}).length-
+                    (myData | filter: {DemandStatus: 'Identified'}).length-
+                    (myData | filter: {DemandStatus: 'Hold'}).length
+            }}
+        </td>
+    </table>
+    <div class="piechart" style="height:300px">
+
+    </div>
+    <script src="scripts/Chart_d3_pie.js"></script>
+</body>
+</html>

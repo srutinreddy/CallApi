@@ -1,0 +1,15 @@
+origin,carrier,count
+GROSS,Onsite,372
+GROSS,Offshore,842
+
+Billable,Onsite,360
+Billable,Offshore,727
+
+Gross Utilization,Onsite,99.2
+Gross Utilization,Offshore,96.4
+
+Support,Onsite,9
+Support,Offshore,5
+
+Contractors,Onsite,8
+Contractors,Offshore,10
